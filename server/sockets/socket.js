@@ -1,6 +1,7 @@
 const { io } = require('../server');
 
 io.on('connection', (client) => {
+
     console.log('Usuario conectado');
 
     client.emit('enviarMensaje', {
@@ -13,7 +14,7 @@ io.on('connection', (client) => {
     });
 
     // escuchar el cliente
-    client.on('enviarMensaje', (mensaje, callback) => {
+    client.on('enviarMensaje', (data, callback) => {
 
         console.log(data);
 
